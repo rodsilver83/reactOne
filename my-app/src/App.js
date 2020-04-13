@@ -1,31 +1,64 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
-const App = (props) => {
-  const [personsState, setPersonsState] = useState({
+class App extends Component {
+  state = {
     persons: [
-      {name: "Rodrigo", age: 36},
-      {name: "Marco", age: 35}
-    ]
-  });
-
-  const switchNameHandler = () => {
-    let newState = {...personsState};
-    newState.persons[0].name = "Jose Rodrigo";
-    setPersonsState(newState);
+      { name: 'Rodrigo', age: 36 },
+      { name: 'Mark', age: 35 },
+    ],
+    showPersons: false
   }
 
-  return (
-    <div>
-      <button onClick={switchNameHandler}>Switch Me</button>
+  switchNameHandler = (newName) => {
+    this.setState({
+      persons: [
+        {name: newName, age: 36},
+        {name: "Mark", age: 35}
+      ]
+    });
+  }
+
+  nameChangeHandler = (event) => {
+    this.setState({
+      persons: [
+        {name: "Jose Rodrigo", age: 36},
+        {name: event.target.value, age: 35}
+      ]
+    });
+  }
+
+  tooggleHandler = () => {
+    const doesShow = this.state.showPersons;
+    this.setState({showPersons: !doesShow});
+  }
+
+  render() {
+    let persons = null;
+    if (this.state.showPersons) {
+      persons = (
+        <div className="App">
+          <Person
+            name={this.state.persons[0].name}
+            age={this.state.persons[0].age}/>
+          <Person
+            name={this.state.persons[1].name}
+            age={this.state.persons[1].age}
+            click={this.switchNameHandler.bind(this, "Jose Rods")}
+            change={this.nameChangeHandler}>
+            Hola Hobbies</Person>
+        </div>
+      );
+    }
+
+    return (
       <div className="App">
-        <Person name={personsState.persons[0].name} age={personsState.persons[0].age}/>
-        <Person name={personsState.persons[1].name} age={personsState.persons[1].age}>Hola Hobbies</Person>
+        <button onClick={this.tooggleHandler}>Toggle Content</button>
+        {persons}
       </div>
-    </div>
-  );
-  
+    );
+  }
 }
 
 export default App;
