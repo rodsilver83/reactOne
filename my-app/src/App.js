@@ -7,8 +7,9 @@ class App extends Component {
     persons: [
       { id:'erg', name: 'Rodrigo', age: 36 },
       { id: 'tbre', name: 'Mark', age: 35 },
+      { id: 'tbre', name: 'Mark', age: 35 },
     ],
-    showPersons: true
+    showPersons: false
   }
 
   nameChangeHandler = (event, id) => {
@@ -37,10 +38,21 @@ class App extends Component {
   }
 
   render() {
+    const style = {
+      border: '2px solid #cde',
+      padding: '10px',
+      margin: '10px',
+      borderRadius: '10px',
+      backgroundColor: 'green',
+      cursor: 'pointer'
+    }
+
     let persons = null;
     if (this.state.showPersons) {
+      style.backgroundColor = 'red';
+
       persons = (
-        <div className="App">
+        <div>
           {this.state.persons.map( (person, index) => {
             return <Person
             key={person.id}
@@ -53,9 +65,18 @@ class App extends Component {
       );
     }
 
+    const classes = [];
+    if (this.state.persons.length <= 2) {
+      classes.push('red');
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push('bold');
+    }
+
     return (
       <div className="App">
-        <button onClick={this.tooggleHandler}>Toggle Content</button>
+        <p className={classes.join(' ')}>My list of persons</p>
+        <button style={style} onClick={this.tooggleHandler}>Toggle Content</button>
         {persons}
       </div>
     );
