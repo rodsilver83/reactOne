@@ -1,22 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import styled from 'styled-components';
-
-const StyleButton = styled.button`
-  border: 2px solid #cde;
-  color: #cde;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  background-color: ${props => props.alt ? 'red' : 'green'};
-  cursor: pointer;
-
-  &:hover {
-    color: black;
-    background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
-  }
-`;
 
 class App extends Component {
   state = {
@@ -81,7 +65,7 @@ class App extends Component {
     return (
         <div className="App">
           <p className={classes.join(' ')}>My list of persons</p>
-          <StyleButton alt={this.state.showPersons} onClick={this.tooggleHandler}>Toggle Content</StyleButton>
+          <button onClick={this.tooggleHandler}>Toggle Content</button>
           {persons}
         </div>
     );

@@ -13,3 +13,18 @@
 .bold {
   font-weight: bold;
 }
+
+button {
+  border: 2px solid #cde;
+  color: #cde;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: green;
+  cursor: pointer;
+}
+
+button:hover {
+  color: black;
+  background-color: lightgreen;
+}
