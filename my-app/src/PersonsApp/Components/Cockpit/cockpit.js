@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './cockpit.module.css';
 
 const Cockpit = (props) => {
+  useEffect(() => {
+    console.log('Cockpit.js Use effect');
+    setTimeout(() => {
+      alert('Save data to cloud');
+    }, 1000);
+    return () => {
+      console.log('cockpit.js cleanup');
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log('Cockpit.js 2nd Use effect');
+    return () => {
+      console.log('cockpit.js cleanup 2');
+    }
+  }, );
+
   const buttonCss = [classes.Button];
   if (props.showPersons) {
     buttonCss.push(classes.toggleButton);
