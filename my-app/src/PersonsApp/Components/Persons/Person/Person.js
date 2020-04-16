@@ -11,19 +11,18 @@ class Person extends Component {
         this.inputEl = React.createRef();
     }
 
+    static contextType = AuthContext;
+
     componentDidMount() {
         this.inputEl.current.focus();
+        console.log('Context: ', this.context.authenticated);
     }
 
     render() {
         console.log('Person.js Render');
         return (
             <Aux>
-                <AuthContext.Consumer>
-                    {(context) =>
-                        context.authenticated ? <p>Authenticated</p> : <p>Please Login</p>
-                    }
-                </AuthContext.Consumer>
+                {this.context.authenticated ? <p>Authenticated</p> : <p>Please Login</p>}
                 <h2 onClick={this.props.click}>{this.props.name}</h2>
                 <p>Age: {this.props.age}</p>
                 <p>{this.props.children}</p>
@@ -32,7 +31,6 @@ class Person extends Component {
                     ref={this.inputEl}
                     onChange={this.props.change}
                     value={this.props.name} />
-
             </Aux>
         );
     }
