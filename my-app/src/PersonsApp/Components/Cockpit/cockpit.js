@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import classes from './cockpit.module.css';
 
 const Cockpit = (props) => {
+  const toggleBtnRef = useRef(null);
+
   useEffect(() => {
-    console.log('Cockpit.js Use effect');
-    const timer = setTimeout(() => {
-      alert('Save data to cloud');
-    }, 1000);
-    return () => {
-      clearTimeout(timer);
-      console.log('cockpit.js cleanup');
-    }
+    // console.log('Cockpit.js Use effect');
+    // const timer = setTimeout(() => {
+    //   alert('Save data to cloud');
+    // }, 1000);
+    // return () => {
+    //   clearTimeout(timer);
+    //   console.log('cockpit.js cleanup');
+    // }
+
+    toggleBtnRef.current.click();
   }, []);
 
   useEffect(() => {
@@ -18,7 +22,7 @@ const Cockpit = (props) => {
     return () => {
       console.log('cockpit.js cleanup 2');
     }
-  }, );
+  });
 
   const buttonCss = [classes.Button];
   if (props.showPersons) {
@@ -36,7 +40,10 @@ const Cockpit = (props) => {
   return (
     <div className={classes.App}>
       <p className={assignedClasses.join(' ')}>My list of persons</p>
-      <button className={buttonCss.join(' ')} onClick={props.clicked}>Toggle Content</button>
+      <button
+        ref={toggleBtnRef}
+        className={buttonCss.join(' ')}
+        onClick={props.clicked}>Toggle Content</button>
     </div>
   );
 }
