@@ -4,10 +4,11 @@ import classes from './cockpit.module.css';
 const Cockpit = (props) => {
   useEffect(() => {
     console.log('Cockpit.js Use effect');
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       alert('Save data to cloud');
     }, 1000);
     return () => {
+      clearTimeout(timer);
       console.log('cockpit.js cleanup');
     }
   }, []);
@@ -25,10 +26,10 @@ const Cockpit = (props) => {
   }
 
   const assignedClasses = [];
-  if (props.persons.length <= 2) {
+  if (props.personsLength <= 2) {
     assignedClasses.push(classes.red);
   }
-  if (props.persons.length <= 1) {
+  if (props.personsLength <= 1) {
     assignedClasses.push(classes.bold);
   }
 
@@ -40,4 +41,4 @@ const Cockpit = (props) => {
   );
 }
 
-export default Cockpit;
+export default React.memo(Cockpit);
