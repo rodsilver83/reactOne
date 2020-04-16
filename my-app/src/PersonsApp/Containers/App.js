@@ -15,7 +15,8 @@ class App extends Component {
         { id: 'tbie', name: 'Marco', age: 25 },
       ],
       showPersons: false,
-      showCockpit: true
+      showCockpit: true,
+      changeCounter: 0
     }
   }
 
@@ -37,8 +38,11 @@ class App extends Component {
 
     const persons = [...this.state.persons];
     persons[index] = person;
-    this.setState({
-      persons: persons
+    this.setState((prevState, props) => {
+      return {
+        persons: persons,
+        changeCounter: prevState.changeCounter + 1
+      }
     });
   }
 
