@@ -38,6 +38,7 @@ class App extends Component {
 
     const persons = [...this.state.persons];
     persons[index] = person;
+
     this.setState((prevState, props) => {
       return {
         persons: persons,
