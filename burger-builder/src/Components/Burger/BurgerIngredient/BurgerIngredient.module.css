@@ -2,35 +2,40 @@
   background-color: #eca03d;
   height: 35px;
   border-radius: 30px  30px 0 0;
-  margin: 2px;
+  margin: 2px 15px;
+  box-shadow: inset -10px -10px 10px -5px #975f15;
 }
 
 .breadBottom {
   background-color: #eca03d;
   height: 25px;
   border-radius: 0 0 15px  15px;
-  margin: 2px;
+  margin: 2px 15px;
+  box-shadow: inset -10px -10px 10px -5px #975f15;
 }
 
 .meat {
   background-color: #8c1919;
   height: 30px;
   border-radius: 25px;
-  margin: 2px;
+  margin: 2px 5px;
+  box-shadow: inset -10px -10px 10px -5px #4b0a0a;
 }
 
 .onion {
   background-color: #d6e6e6;
   height: 7px;
-  border-radius: 5px;
-  margin: 2px;
+  border-radius: 2px;
+  margin: 2px 25px;
+  box-shadow: inset -10px -10px 10px -5px #607474;
 }
 
 .tomato {
   background-color: #f44336;
   height: 15px;
   border-radius: 5px;
-  margin: 2px;
+  margin: 2px 15px;
+  box-shadow: inset -10px -10px 10px -5px #9b1f16;
 }
 
 .lettuce {
@@ -38,20 +43,21 @@
   height: 5px;
   border-radius: 5px;
   margin: 2px;
+  box-shadow: inset -10px -10px 10px -5px #4d9100;
 }
 
 .cheese {
-  background-color: #ecd928;
+  background-color: #ffe605;
   height: 8px;
-  border-radius: 5px;
   margin: 2px;
+  box-shadow: inset -10px -10px 10px -5px #aa9a0c;
 }
 
 .bacon {
   background-color: #741811;
   height: 3px;
   border-radius: 5px;
-  margin: 2px;
+  margin: 2px 10px;
+  box-shadow: inset -10px -10px 10px -5px #350704;
 }
-
 
