@@ -20,7 +20,7 @@ const SideDrawer = (props) => {
       <Backdrop show={props.open} clicked={props.closed} />
       <div className={sideDrawerClasses.join(' ')}>
         <div className={css.Logo}>
-          <Logo />
+          <Logo toggle={props.toggle} />
         </div>
         <nav>
           <NavigationItems />
