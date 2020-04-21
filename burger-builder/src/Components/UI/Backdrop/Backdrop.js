@@ -3,7 +3,7 @@ import css from './Backdrop.module.css';
 
 const backdrop = (props) => (
   props.show ? <div className={css.Backdrop}
-    onClick={props.clicked}>
+    onClick={props.clicked}>{props.children}
   </div> : null
 );
 
