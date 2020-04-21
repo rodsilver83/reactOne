@@ -18,6 +18,7 @@ const buildControls = (props) => (
       <BuildControl
         key={control.label}
         label={control.label}
+        quantity={props.ingredients[control.type]}
         add={() => props.ingredientAdd(control.type)}
         remove={() => props.ingredientRemove(control.type)}
         disabled={props.disabledInfo[control.type]}

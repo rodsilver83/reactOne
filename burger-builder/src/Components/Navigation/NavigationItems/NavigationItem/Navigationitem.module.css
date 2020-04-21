@@ -1,5 +1,4 @@
 .NavigationItem {
-  margin: 10px 0;
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -7,17 +6,19 @@
 }
 
 .NavigationItem a {
-  color: black;
+  color: var(--dark-text-color);
   text-decoration: none;
   width: 100%;
   box-sizing: border-box;
   display: block;
+  padding: 16px;
 }
 
 .NavigationItem a:hover,
 .NavigationItem a:active,
 .NavigationItem a.active {
-  color: blue;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
 }
 
 @media (min-width: 500px) {
@@ -30,7 +31,7 @@
   }
   
   .NavigationItem a {
-    color: white;
+    color: var(--text-color);
     height: 100%;
     padding: 16px 10px;
     border-bottom: 4px solid transparent;
@@ -39,8 +40,8 @@
   .NavigationItem a:hover,
   .NavigationItem a:active,
   .NavigationItem a.active {
-    background-color: rgb(21, 64, 204);
-    border-bottom: 4px solid rgb(235, 129, 8);
-    color: white;
+    background-color: var(--secondary-color);
+    border-bottom: 4px solid var(--light-color);
+    color: var(--text-color);
   }
 }

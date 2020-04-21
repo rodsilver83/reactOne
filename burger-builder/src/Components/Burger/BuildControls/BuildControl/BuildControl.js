@@ -4,10 +4,13 @@ import css from './BuildControl.module.css';
 const buildControl = (props) => (
   <div className={css.BuildControl}>
     <div className={css.Label}>{props.label}</div>
-    <button className={css.Less}
-      onClick={props.remove}
-      disabled={props.disabled}>Less</button>
-    <button className={css.More} onClick={props.add}>More</button>
+    <div className={css.ButtonWrapper}>
+      <button className={css.Less}
+        onClick={props.remove}
+        disabled={props.disabled}>-</button>
+      <span className={css.quantity}>{props.quantity}</span>
+      <button className={css.More} onClick={props.add}>+</button>
+    </div>
   </div>
 )
 

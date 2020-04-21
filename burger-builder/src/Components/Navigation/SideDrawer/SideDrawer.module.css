@@ -6,8 +6,8 @@
   left: 0;
   top: 0;
   z-index: 200;
-  background-color: white;
-  padding: 16px 16px;
+  background-color: var(--white-color);
+  padding: 16px 0px;
   box-sizing: border-box;
   transition: transform 0.3s ease-out;
 }
