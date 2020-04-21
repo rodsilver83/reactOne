@@ -3,6 +3,9 @@
   justify-content: space-between;
   align-items: center;
   margin: 5px 0;
+  background-color: var(--secondary-color);
+  border-radius: 30px;
+  padding: 0 0 0 20px;
 }
 
 .BuildControl button {
@@ -14,7 +17,6 @@
   height: 50px;
   border: 1px solid var(--secondary-color);
   cursor: pointer;
-  outline: none;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -35,9 +37,9 @@
 }
 
 .Label {
-  padding: 10px;
   font-weight: bold;
   width: 80px;
+  color: var(--text-color)
 }
 
 .BuildControl .Less {  
@@ -73,5 +75,5 @@
   align-items: center;
   border: 1px solid var(--light-color);
   border-radius: 30px;
-  background-color: var(--secondary-color);
+  background-color: var(--light-color);
 }
