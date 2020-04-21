@@ -6,12 +6,12 @@ import Modal from '../../Components/UI/Modal/Modal';
 import OrderSummary from "../../Components/Burger/OrderSummary/OrderSummary";
 
 const INGREDIENT_PRICES = {
-  onion: 0.5,
-  tomato: 0.5,
-  lettuce: 0.5,
-  bacon: 1,
+  onion: 0.25,
+  tomato: 0.35,
+  lettuce: 0.3,
+  bacon: 1.25,
   cheese: 1,
-  meat: 2,
+  meat: 2.5,
 }
 
 class BurgerBuilder extends Component {
@@ -36,7 +36,6 @@ class BurgerBuilder extends Component {
     const sum = Object.keys(ingredients).reduce((prev, current) => {
       return prev + ingredients[current];
     }, 0);
-    console.log('Sum:', sum);
     this.setState({ purchasable: sum > 0 });
   }
 

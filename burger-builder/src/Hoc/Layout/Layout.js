@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Aux from '../../Hoc/Aux';
-import ToolBar from '../Navigation/Toolbar/Toolbar';
+import Aux from '../Aux';
+import ToolBar from '../../Components/Navigation/Toolbar/Toolbar';
 import css from './Layout.module.css';
-import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import SideDrawer from '../../Components/Navigation/SideDrawer/SideDrawer';
 
 class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showSideDrawer: true
+      showSideDrawer: false
     }
   }
 
