@@ -2,7 +2,7 @@
   z-index: 600;
   background-color: var(--text-color);
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px black;
   padding: 16px;
@@ -15,5 +15,6 @@
 @media (min-width: 600px) {
   .Modal {
       width: 500px;
+      max-height: 400px;
   }
 }
