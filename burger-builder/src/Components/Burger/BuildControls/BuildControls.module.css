@@ -1,3 +1,10 @@
+.Price {
+  padding: 16px;
+  border: 1px solid var(--white-color);
+  color: var(--text-color);
+  border-radius: 2px;
+}
+
 .BuildControls {
   width: 100%;
   background-color: var(--bg-color);

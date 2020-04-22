@@ -76,4 +76,5 @@
   border: 1px solid var(--light-color);
   border-radius: 30px;
   background-color: var(--light-color);
+  padding: 1px;
 }
