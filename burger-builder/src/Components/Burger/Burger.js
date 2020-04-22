@@ -2,9 +2,20 @@ import React from 'react';
 import css from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
+const INGREDIENTS_ORDER = {
+  onion: 0,
+  tomato: 1,
+  lettuce: 2,
+  bacon: 3,
+  cheese: 4,
+  meat: 5,
+}
+
 const burger = (props) => {
   const transformedIngredients = Object.keys(props.ingredients)
-    .map((igKey) => {
+    .sort((a, b) => {
+      return INGREDIENTS_ORDER[a] - INGREDIENTS_ORDER[b];
+    }).map((igKey) => {
       return [...Array(props.ingredients[igKey])].map((_, i) => {
         return <BurgerIngredient key={igKey + i} type={igKey} />
       });
