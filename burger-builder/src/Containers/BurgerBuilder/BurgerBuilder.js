@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import Aux from "../../Hoc/Aux";
+import Aux from "../../Hoc/Aux/Aux";
 import Burger from "../../Components/Burger/Burger";
 import BuildControls from "../../Components/Burger/BuildControls/BuildControls";
 import Modal from '../../Components/UI/Modal/Modal';
 import OrderSummary from "../../Components/Burger/OrderSummary/OrderSummary";
 import axios from '../../axios-orders';
 import Spinner from '../../Components/UI/Spinner/Spinner';
+import withErrorHandler from "../../Hoc/WithError/WithError";
 
 const INGREDIENT_PRICES = {
   onion: 0.25,
@@ -100,11 +101,9 @@ class BurgerBuilder extends Component {
     axios.post('/order.json', order)
       .then(response => {
         this.setState({ loading: false, purchasing: false });
-        console.log('Response: ', response)
       })
       .catch(error => {
         this.setState({ loading: false, purchasing: false });
-        console.log(error)
       });
   }
 
@@ -149,4 +148,4 @@ class BurgerBuilder extends Component {
   }
 }
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
