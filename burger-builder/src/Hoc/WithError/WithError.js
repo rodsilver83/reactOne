@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Aux from '../Aux/Aux';
 import Modal from '../../Components/UI/Modal/Modal';
 
-
 const withErrorHandler = (WrappedComponent, axios) => {
   return class extends Component {
     constructor(props) {
@@ -10,15 +9,25 @@ const withErrorHandler = (WrappedComponent, axios) => {
       this.state = {
         error: null
       }
-    }
-    componentDidMount() {
-      axios.interceptors.response.use(req => {
-        this.setState({ error: null });
+
+      this.interceptors = [];
+
+      this.interceptors.push(axios.interceptors.response.use(req => {
+        this.state = {
+          error: null
+        }
         return req;
-      })
-      axios.interceptors.response.use(res => res, error => {
+      }))
+
+      this.interceptors.push(axios.interceptors.response.use(res => res, error => {
         this.setState({ error: error });
-      })
+      }))
+    }
+
+    componentWillUnmount = () => {
+      this.interceptors.forEach(interceptor => {
+        axios.eject(interceptor);
+      });
     }
 
     erroConfirmedHandler = () => {
