@@ -10,15 +10,15 @@
   font-weight: bold;
 }
 
-.Button:first-of-type {
+/* .Button:first-of-type {
   margin-left: 0;
   padding-left: 0;
-}
+} */
 
 .Success {
-  color: #5C9210;
+  color: var(--light-color);
 }
 
 .Danger {
-  color: #944317;
+  color: var(--dark-text-color);
 }

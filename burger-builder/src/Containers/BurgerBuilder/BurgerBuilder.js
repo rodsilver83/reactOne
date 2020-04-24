@@ -33,7 +33,10 @@ class BurgerBuilder extends Component {
   componentDidMount = () => {
     axios.get('https://reactburgerbuilder-31ed5.firebaseio.com/ingredients.json')
       .then((res) => {
-        this.setState({ ingredients: res.data })
+        const purchasable = Object.keys(res.data).reduce((prev, item) => {
+          return prev + res.data[item];
+        }, 0) > 0;
+        this.setState({ ingredients: res.data, purchasable: purchasable })
       })
       .catch((err) => {
         this.setState({ error: err });
@@ -110,6 +113,7 @@ class BurgerBuilder extends Component {
       .catch(error => {
         this.setState({ loading: false, purchasing: false });
       });
+    this.props.history.push('/checkout');
   }
 
   render() {
