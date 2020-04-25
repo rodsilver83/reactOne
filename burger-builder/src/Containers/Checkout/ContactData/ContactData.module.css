@@ -1,0 +1,14 @@
+.ContactData {
+  text-align: center; 
+  background-color: var(--secondary-color);
+  padding: 10px;
+}
+
+.ContactData h4 {
+  color: var(--text-color);
+}
+
+.ContactData input {
+  display: block;
+  margin: 10px auto;
+}

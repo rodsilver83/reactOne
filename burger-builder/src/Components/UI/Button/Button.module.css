@@ -10,15 +10,29 @@
   font-weight: bold;
 }
 
+.Button:hover {
+  filter: brightness(1.2);
+}
+
+.Button:disabled {
+  filter: saturate(0.5);
+}
+
 /* .Button:first-of-type {
   margin-left: 0;
   padding-left: 0;
 } */
 
 .Success {
-  color: var(--light-color);
+  border-radius: 30px;
+  padding: 15px 25px;
+  background-color: var(--primary-color);
+  color: var(--dark-text-color);
 }
 
 .Danger {
-  color: var(--dark-text-color);
+  border-radius: 30px;
+  padding: 15px 25px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
