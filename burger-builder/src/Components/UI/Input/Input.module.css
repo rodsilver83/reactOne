@@ -1,0 +1,16 @@
+.Input {
+  width: 100%;
+  display: block;
+}
+
+.Label {
+  font-weight: bold;
+  display: block;
+}
+
+.InputElement {
+  border: 1px solid #ccc;
+  background-color: var(--white-color);
+  font: inherit;
+  padding: 10px 20px;
+}

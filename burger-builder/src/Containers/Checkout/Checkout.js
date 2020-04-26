@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CheckoutSummary from '../../Components/Order/CheckoutSummary/CheckoutSummary';
+import CheckoutSummary from '../../Components/CheckoutSummary/CheckoutSummary/CheckoutSummary';
 import { Route } from 'react-router-dom';
 import ContactData from "./ContactData/ContactData";
 
@@ -21,8 +21,6 @@ class Checkout extends Component {
     const ingredients = {};
     let price;
     for (let param of query.entries()) {
-      console.log(param);
-
       if (param[0] === 'price') {
         price = param[1];
       } else {
