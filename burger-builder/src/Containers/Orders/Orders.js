@@ -3,6 +3,7 @@ import Order from './Order/Order';
 import axios from "../../axios-orders";
 import withErrorHandler from "../../Hoc/WithError/WithError";
 import css from './Orders.module.css';
+import Spinner from "../../Components/UI/Spinner/Spinner";
 
 class Orders extends Component {
   state = {
@@ -25,9 +26,11 @@ class Orders extends Component {
   render() {
     return (
       <div className={css.Orders}>
-        {this.state.orders.map((order) => (
-          <Order {...order} key={order.id}></Order>
-        ))}
+        {this.state.loading ?
+          <Spinner></Spinner> :
+          this.state.orders.map((order) => (
+            <Order {...order} key={order.id}></Order>
+          ))}
       </div>
     );
   }
