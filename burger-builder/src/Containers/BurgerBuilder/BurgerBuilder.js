@@ -56,7 +56,7 @@ class BurgerBuilder extends Component {
   }
 
   addIngredientHandler = (type) => {
-    const oldCount = this.state.ingredients[type];
+    const oldCount = Number.parseInt(this.state.ingredients[type]);
     const updateCount = oldCount + 1;
     const updatedIngredients = {
       ...this.state.ingredients
@@ -70,7 +70,7 @@ class BurgerBuilder extends Component {
   }
 
   removeIngredientHandler = (type) => {
-    const oldCount = this.state.ingredients[type];
+    const oldCount = Number.parseInt(this.state.ingredients[type]);
     if (oldCount <= 0) {
       return;
     }
@@ -95,32 +95,11 @@ class BurgerBuilder extends Component {
   }
 
   continuePurchaseHandler = () => {
-    // this.setState({ loading: true });
-    // const order = {
-    //   ingredients: this.state.ingredients,
-    //   price: this.state.totalPrice.toFixed(2),
-    //   cutomer: {
-    //     name: 'Lalo Landa',
-    //     address: {
-    //       street: 'Test Street',
-    //       zipCode: '00001',
-    //       country: 'London'
-    //     },
-    //     email: '123@test.com',
-    //     deliveryMethod: 'Fastest'
-    //   }
-    // }
-    // axios.post('/order.json', order)
-    //   .then(response => {
-    //     this.setState({ loading: false, purchasing: false });
-    //   })
-    //   .catch(error => {
-    //     this.setState({ loading: false, purchasing: false });
-    //   });
     const params = [];
     for (let i in this.state.ingredients) {
       params.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
     }
+    params.push('price=' + this.state.totalPrice);
     const queryString = params.join('&');
     this.props.history.push({
       pathname: '/checkout',

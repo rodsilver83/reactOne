@@ -1,0 +1,23 @@
+.Order {
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid var(--secondary-color);
+  box-shadow: 0 2px 3px #ccc;
+  padding: 0 16px;
+  box-sizing: border-box;
+  margin: 10px 20px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.Ingredient {
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.Price {
+  color: var(--primary-color)
+}

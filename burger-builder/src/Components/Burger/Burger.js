@@ -13,7 +13,6 @@ const INGREDIENTS_ORDER = {
 }
 
 const burger = (props) => {
-  console.log(props);
   const transformedIngredients = Object.keys(props.ingredients)
     .sort((a, b) => {
       return INGREDIENTS_ORDER[a] - INGREDIENTS_ORDER[b];
